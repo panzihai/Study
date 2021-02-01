@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>gif验证码</title>
+</head>
+<body>
+<div>
+    <div>
+        <img id="jpgImg" src="/makeGif/jpgCode" class="image-slide" style="width: 100px; height: 30px;">
+        <input type="button" onclick="jpgCode();" value="刷新普通验证码"/>
+    </div>
+    <div>
+        <img id="gifImg" src="/makeGif/gifCode" class="image-slide" style="width: 100px; height: 30px;">
+        <input type="button" onclick="gifCode();" value="刷新动态验证码"/>
+    </div>
+</div>
+</body>
+<script>
+    function jpgCode(){
+        document.getElementById("jpgImg").src = "/makeGif/jpgCode?t=" +Date.now();
+    }
+    function gifCode(){
+        document.getElementById("gifImg").src = "/makeGif/gifCode?t=" +Date.now();
+    }
+</script>
+</html>
